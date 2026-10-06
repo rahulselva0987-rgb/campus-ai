@@ -1,0 +1,12 @@
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Prisma Schema Validator",
+    "trigger": "PostFileSave",
+    "matcher": "schema\\.prisma$",
+    "action": {
+      "type": "command",
+      "command": "cd C:\\campus-ai\\backend && node node_modules\\prisma\\build\\index.js validate && echo Prisma schema is valid"
+    }
+  }]
+}

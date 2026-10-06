@@ -1,0 +1,12 @@
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Pre-Commit Quality Gate",
+    "trigger": "PreToolUse",
+    "matcher": "fs_write|str_replace",
+    "action": {
+      "type": "agent",
+      "prompt": "Before saving this file, verify: (1) TypeScript types are correct, (2) no secrets or API keys are hardcoded, (3) password fields are never returned in API responses, (4) all new route handlers include authentication middleware. Flag any violations."
+    }
+  }]
+}

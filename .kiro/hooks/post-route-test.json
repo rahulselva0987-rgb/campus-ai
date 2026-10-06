@@ -1,0 +1,12 @@
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Run Tests After Route Changes",
+    "trigger": "PostFileSave",
+    "matcher": "backend/src/routes/.*\\.ts$",
+    "action": {
+      "type": "agent",
+      "prompt": "A backend route file was just saved. Remind the developer to run tests: cd C:\\campus-ai\\backend && node node_modules\\vitest\\dist\\cli.js run. Check that all API endpoints have matching tests in tests/api.test.ts."
+    }
+  }]
+}
